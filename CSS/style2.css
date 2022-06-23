@@ -1,0 +1,131 @@
+.Flipjogos {
+    position: relative;
+    height: 89px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 60px;
+    padding-left: 30px;
+    
+    color: #39FF14;  
+  
+
+}
+
+.Flipjogos:hover {
+ color:#7bf865;   
+}
+
+.Destaques {
+    color:aquamarine;
+}
+
+.Destaques:hover {
+    color:rgb(147, 232, 204);   
+}
+
+.Pacman{
+    color:yellow;
+}
+
+.Pacman:hover {
+    color:rgb(240, 240, 126); 
+}
+
+.Snake{
+    color:greenyellow;   
+}
+
+.Snake:hover {
+    color:rgb(188, 247, 100);  
+}
+
+.SpaceInvaders {
+    color:whitesmoke;   
+}
+
+.SpaceInvaders:hover {
+    color:rgb(226, 223, 223);  
+}
+
+h4 {
+    color:navy;   
+}
+
+h4:hover {
+    color:rgb(42, 42, 167);
+}
+.Tetris {
+    color:aqua;
+}
+
+.Tetris:hover {
+    color:rgb(131, 250, 250); 
+}
+.banner {
+    height: 100vh;
+    
+    /* Flexbox */
+    display: flex;
+    align-items: center;
+   }
+
+
+.Fliperama {
+  padding-left: 30px;  
+}
+
+.pacman {
+ padding-right: 50px;   
+}
+
+
+
+
+
+
+.margin {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.navbar-toggler {
+    color:white;
+}
+
+.games {
+ background-image: url(1122588.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ padding-top: 100px;
+ min-height: 600px;
+
+}
+
+
+ 
+
+.cont {
+    background-color: aquamarine; 
+    min-height: 800px  
+    
+}
+
+.cont:hover {
+ background-color: rgb(163, 245, 218);   
+}
+.bg-footer {
+ background-color:blue; 
+}
+
+
+
+p:hover {
+ color:aliceblue;
+    }
+
+.img-thumbnail:hover {
+ border: dashed royalblue 2px;   
+}
+
