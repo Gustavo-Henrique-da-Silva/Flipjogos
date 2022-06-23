@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Space Invaders</title>
+        <link rel="stylesheet" type="text/css" href="css/core.css">
+        <link rel="stylesheet" type="text/css" href="css/typeography.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="img2/spa.jpg">
+        <style>
+
+            body, html { 
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            }
+
+            #starfield {
+                width:100%;
+                height:100%;
+                z-index: -1;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+            #gamecontainer {
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #gamecanvas { 
+                width: 800px;
+                height: 600px;
+            }
+            #info {
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .Flipjogos {
+    position: relative;
+    height: 89px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 60px;
+    color: #39FF14;  }
+            
+    .bg-footer {
+ background-color:yellow; 
+}
+        </style>
+    </head>
+    <body>
+            <nav class="navbar fixed-top  bg-dark">
+                    <div class="container-fluid">
+                     <h1 class="Flipjogos">Flipjogos</h1>
+                     
+                     <a href="index.html" target="_blank"><img src="img2/casa.png" width="70px" class="rounded mx-auto d-block"></a>
+                     <a href="pacman.html" target="_blank"><img src="img2/pac.ico" width="70px" class="rounded mx-auto d-block"></a>
+                     <a href="index2.html" target="_blank"><img src="img2/tetris.png" width="70px" class="rounded mx-auto d-block"></a>
+            
+                    </div>
+                  </nav>
+                 
+        <div id="starfield"></div>
+        <div id="gamecontainer">
+        <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <script src="js/starfield.js"></script>
+        <script src="js/spaceinvaders.js"></script>
+        <script>
+
+            var container = document.getElementById('starfield');
+            var starfield = new Starfield();
+            starfield.initialise(container);
+            starfield.start();
+
+          
+            var canvas = document.getElementById("gameCanvas");
+            canvas.width = 800;
+            canvas.height = 600;
+
+            var game = new Game();
+
+            game.initialise(canvas);
+
+            game.start();
+
+            window.addEventListener("keydown", function keydown(e) {
+                var keycode = e.which || window.event.keycode;
+                if(keycode == 37 || keycode == 39 || keycode == 32) {
+                    e.preventDefault();
+                }
+                game.keyDown(keycode);
+
+            });
+            window.addEventListener("keyup", function keydown(e) {
+                var keycode = e.which || window.event.keycode;
+                game.keyUp(keycode);
+            });
+
+            window.addEventListener("touchstart", function (e) {
+                game.touchstart(e);
+            }, false);
+ 
+            window.addEventListener('touchend', function(e){
+                game.touchend(e);
+            }, false);
+
+            window.addEventListener('touchmove', function(e){
+                game.touchmove(e);
+            }, false);
+
+            function toggleMute() {
+                game.mute();
+                document.getElementById("muteLink").innerText = game.sounds.mute ? "unmute" : "mute";
+            }
+        </script>
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-41728580-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<footer class="container-fluid text-center margin bg-footer">
+        <p> Desenvolvido por Hugo</p>
+        <p> Adaptado graças as aulas de Profº Ediney Bareto</p>
+    </footer>
+
+    </div>
+
+    
+    
+    </body>
+</html>
